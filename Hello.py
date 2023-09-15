@@ -14,6 +14,14 @@
 
 import streamlit as st
 from streamlit.logger import get_logger
+import os
+import openai
+
+# Setting the API key
+openai.api_key = st.secrets['OPENAI_API_KEY']
+
+# Perform tasks using OpenAI API
+openai.Model.list() # List all OpenAI models
 
 LOGGER = get_logger(__name__)
 
@@ -24,13 +32,13 @@ def run():
         page_icon="👋",
     )
 
-    st.write("# Welcome to Streamlit! 👋")
+    st.write("# Welcome to The Client Summary App! 👋")
 
     st.sidebar.success("Select a demo above.")
 
     st.markdown(
         """
-        Streamlit is an open-source app framework built specifically for
+        Yo ...Streamlit is an open-source app framework built specifically for
         Machine Learning and Data Science projects.
         **👈 Select a demo from the sidebar** to see some examples
         of what Streamlit can do!
