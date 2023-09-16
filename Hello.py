@@ -14,11 +14,11 @@
 
 import streamlit as st
 from streamlit.logger import get_logger
-import os
 import openai
 
 # Setting the API key
-openai.api_key = st.secrets['OPENAI_API_KEY']
+# openai.api_key = st.secrets['OPENAI_API_KEY']
+print(st.secrets)
 
 # Perform tasks using OpenAI API
 openai.Model.list() # List all OpenAI models
