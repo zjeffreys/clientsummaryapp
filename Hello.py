@@ -17,9 +17,9 @@ from streamlit.logger import get_logger
 import openai
 
 # Setting the API key
-openai.api_key = st.secrets["OPENAI_API_KEY"]
 print(st.secrets['db_username'])
 print(st.secrets)
+openai.api_key = st.secrets["OPENAI_API_KEY"]
 
 
 # Perform tasks using OpenAI API
