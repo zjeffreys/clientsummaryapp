@@ -17,20 +17,24 @@ from streamlit.logger import get_logger
 import openai
 
 # Setting the API key
-print(st.secrets['db_username'])
-print(st.secrets)
 openai.api_key = st.secrets["OPENAI_API_KEY"]
+
+if(st.secrets["OPENAI_API_KEY"] ==  "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"):
+    print("Key is correct")
+else:
+    print("Keys are not the same")
+    print(type(st.secrets["OPENAI_API_KEY"])) 
 
 
 # Perform tasks using OpenAI API
-#print(openai.Model.list()) # List all OpenAI models
+# print(openai.Model.list()) # List all OpenAI models
 
 LOGGER = get_logger(__name__)
 
 
 def run():
     st.set_page_config(
-        page_title=f"{st.secrets}",
+        page_title="Client Summaries",
         page_icon="👋",
     )
 
