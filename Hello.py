@@ -17,18 +17,20 @@ from streamlit.logger import get_logger
 import openai
 
 # Setting the API key
-# openai.api_key = st.secrets['OPENAI_API_KEY']
+openai.api_key = st.secrets["OPENAI_API_KEY"]
+print(st.secrets['db_username'])
 print(st.secrets)
 
+
 # Perform tasks using OpenAI API
-openai.Model.list() # List all OpenAI models
+#print(openai.Model.list()) # List all OpenAI models
 
 LOGGER = get_logger(__name__)
 
 
 def run():
     st.set_page_config(
-        page_title="Hello",
+        page_title=f"{st.secrets}",
         page_icon="👋",
     )
 
