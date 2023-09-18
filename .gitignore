@@ -1,3 +1,2 @@
-.streamlit/
-│   ├── config.toml
-│   └── secrets.toml # Make sure to gitignore this!
+.streamlit/config.toml
+.streamlit/secrets.toml # Make sure to gitignore this!
