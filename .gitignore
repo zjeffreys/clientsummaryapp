@@ -1,2 +1,1 @@
-.streamlit/config.toml
-.streamlit/secrets.toml # Make sure to gitignore this!
+.streamlit/secrets.toml
