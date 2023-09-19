@@ -61,6 +61,7 @@ def main():
     st.header("📄Summarize Insurance Docs 🤗")
 
     # upload a your pdf file
+    st.title("Upload Document")
     pdf = st.file_uploader("Step 1 - Upload your PDF", type='pdf')
    
 
@@ -107,6 +108,7 @@ def main():
         left_column, right_column = st.columns(2)
 
         with left_column:
+            st.title("Chatbot")
             query = st.text_input("Step 2 - Ask questions about the information you need.", "Please summarize this policy")
             query = query + 'Add new line characters in the proper places'
             query = query + "Always provide page numbers to reference where you found the information"
