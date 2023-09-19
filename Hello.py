@@ -58,10 +58,10 @@ def generate_pdf(user_text):
     return pdf_buffer
 
 def main():
-    st.header("📄Summarize Insurance Docs 🤗")
+    st.title("📄Summarize Insurance Docs 🤗")
 
     # upload a your pdf file
-    st.title("Upload Document")
+    st.header("Upload Document")
     pdf = st.file_uploader("Step 1 - Upload your PDF", type='pdf')
    
 
@@ -108,7 +108,7 @@ def main():
         left_column, right_column = st.columns(2)
 
         with left_column:
-            st.title("Chatbot")
+            st.header("Chatbot")
             query = st.text_input("Step 2 - Ask questions about the information you need.", "Please summarize this policy")
             query = query + 'Add new line characters in the proper places'
             query = query + "Always provide page numbers to reference where you found the information"
@@ -124,7 +124,7 @@ def main():
                 st.write(":blue[AI Response]")
                 st.markdown(response)                
         with right_column:
-            st.title("PDF Generator")
+            st.header("PDF Generator")
 
             # User inputs
             user_text = st.text_area("Step 3) Copy Information To Here", "This will be used to create a printable document.")
