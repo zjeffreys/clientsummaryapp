@@ -18,6 +18,8 @@ from reportlab.lib.pagesizes import letter
 from reportlab.pdfgen import canvas
 from PIL import Image
 import io
+import pdf2image
+
 
 
 load_dotenv()
@@ -130,8 +132,15 @@ def main():
                     # Generate the PDF
                     pdf_buffer = generate_pdf(user_text)
                     if pdf_buffer:
-                        # Offer the PDF download
-                        st.download_button("Download PDF", pdf_buffer, file_name="Insurace_Quote.pdf", key="pdf-download")
+                        st.write("### Generated PDF:")
+                        
+                    # st.markdown(
+                    #     f'<a href="data:application/pdf;base64,{pdf_buffer.getvalue().encode("base64").decode()}" download="output.pdf">Download PDF</a>',
+                    #     unsafe_allow_html=True
+                    # )
+
+                    # Offer the PDF download
+                    st.download_button("Download PDF", pdf_buffer, file_name="generated_pdf.pdf", key="pdf-download")
                 else:
                     st.error("Please enter some text.")
 
